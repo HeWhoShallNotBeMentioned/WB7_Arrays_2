@@ -50,4 +50,20 @@ console.log(comment);
 
 // Array.prototype.findIndex()
 // Find the comment with this ID
+
+
+const index = comments.findIndex(comment => comment.id === 823423);
+
+console.log({index});
+console.table({...comments});
 // delete the comment with the ID of 823423
+//comments.splice(index, 1);
+//console.table({...comments});
+
+//Example of redux style removal
+const newComments = [
+  ...comments.slice(0, index),
+  ...comments.slice(index + 1)
+];
+
+console.table({...newComments});
